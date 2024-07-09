@@ -1,0 +1,98 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #6A11CB, #2575FC, #a38333, #FF8008);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    height: 100vh;
+    margin: 0;
+    color: white !important;
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+nav.navbar {
+    width: 95%;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 2% auto;
+}
+
+.hero-text h1 {
+    font-weight: 900;
+    font-size: 6rem;
+}
+
+.icon-section {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.icon-section i {
+    font-size: 3rem;
+    color: white;
+}
+
+#bobbing-icon {
+    animation: bobbing 1s ease-in-out infinite;
+}
+
+@keyframes bobbing {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card {
+    background-color: transparent !important;
+    color: white !important;
+    border: 0 !important;
+}
+
+.card-img-top {
+    border-radius: 20px !important;
+}
+
+.tns-nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tns-nav button {
+    width: 10px;
+    height: 10px;
+    border: 0;
+    background-color: white;
+    border-radius: 25px;
+    margin: 5px;
+}
+
+.tns-nav-active {
+    background-color: #FE6A47 !important;
+}
