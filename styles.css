@@ -104,7 +104,8 @@ nav.navbar {
 .about-section,
 .works-section,
 .videos-section,
-.contact-section {
+.contact-section,
+.whatwedo-section {
     padding: 50px 0;
     background-color: white;
     color: black;
@@ -205,6 +206,10 @@ nav.navbar {
 .card-3 .flip-card-back {
     background-color: #F1E92766;
     color: #A09A0A;
+}
+
+.slider-works .slick-slide img {
+    width: 80% !important;
 }
 
 .image-slider {
