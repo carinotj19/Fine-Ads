@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     scroll-behavior: smooth;
@@ -98,6 +99,109 @@ nav.navbar {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientAnimation 15s ease infinite;
+}
+
+.about-section {
+    padding: 50px 0;
+    background-color: white;
+    color: black;
+}
+
+.about-section {
+    justify-content: center;
+    align-items: center;
+}
+
+.about-section .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+    border-radius: 25px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 25px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 25px;
+}
+
+.flip-card-inner.card-1 {
+    border: 1.5px #2D50B9 solid;
+}
+
+.flip-card-inner.card-2 {
+    border: 1.5px #C52600 solid;
+}
+
+.flip-card-inner.card-3 {
+    border: 1.5px #ABA505 solid;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateX(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    border-radius: 25px;
+}
+
+.flip-card-back {
+    transform: rotateX(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.card-1 .flip-card-back {
+    background-color: #4169E166;
+    color: #0029A5;
+}
+
+.card-2 .flip-card-back {
+    background-color: #FE451866;
+    color: #C52600;
+}
+
+.card-3 .flip-card-back {
+    background-color: #F1E92766;
+    color: #A09A0A;
 }
 
 @keyframes bobbing {
