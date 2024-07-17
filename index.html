@@ -203,7 +203,7 @@
         <section class="works-section container">
             <h1 class="section-title">Works</h1>
             <div class="container">
-                <div class="slider">
+                <div class="slider-works">
                     <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 1"></div>
                     <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 2"></div>
                     <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 3"></div>
@@ -216,12 +216,50 @@
     <section class="videos-section container-fluid">
         <section class="videos-section container">
             <h1 class="section-title">Videos</h1>
+            <div class="container">
+                <div class="slider-videos">
+                    <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 1"></div>
+                    <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 2"></div>
+                    <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 3"></div>
+                    <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 4"></div>
+                </div>
+            </div>
         </section>
     </section>
 
     <section class="contact-section container-fluid">
         <section class="contact-section container">
             <h1 class="section-title">Contact us</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 contact-card address">
+                        <div class="icon-bg">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h5>Address</h5>
+                        <p>CH6X-JR5 Post Office Loop, Baguio, Benguet</p>
+                        <p>118 Upper Bonifacio St, Baguio, 2602 Benguet</p>
+                        <p>San Fernando, La Union</p>
+                    </div>
+                    <div class="col-md-4 contact-card phone">
+                        <div class="icon-bg">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h5>Phone</h5>
+                        <p>0920 232 2956</p>
+                        <p>0907 321 3168</p>
+                        <p>0919 216 7201</p>
+                        <p>424-6133</p>
+                    </div>
+                    <div class="col-md-4 contact-card email">
+                        <div class="icon-bg">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p>fineadsartsigns@gmail.com</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </section>
 
@@ -263,7 +301,17 @@
         });
 
         $(document).ready(function () {
-            $('.slider').slick({
+            $('.slider-works').slick({
+                accessibility: true,
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                centerMode: true,
+            });
+            $('.slider-videos').slick({
                 accessibility: true,
                 dots: true,
                 arrows: true,

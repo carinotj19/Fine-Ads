@@ -101,7 +101,10 @@ nav.navbar {
     animation: gradientAnimation 15s ease infinite;
 }
 
-.about-section, .works-section, .videos-section, .contact-section {
+.about-section,
+.works-section,
+.videos-section,
+.contact-section {
     padding: 50px 0;
     background-color: white;
     color: black;
@@ -204,11 +207,47 @@ nav.navbar {
     color: #A09A0A;
 }
 
-.image-slider{
+.image-slider {
     display: flex !important;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 20px;
+    border-right: 1px solid #000000;
+}
+
+.contact-card:last-child {
+    border-right: none;
+}
+
+.contact-card i {
+    font-size: 50px;
+}
+
+.contact-card .icon-bg {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.address .icon-bg {
+    background-color: #4866D6;
+    color: white;
+}
+
+.phone .icon-bg {
+    background-color: #FF6F46;
+    color: white;
+}
+
+.email .icon-bg {
+    background-color: #4866D6;
+    color: white;
 }
 
 @keyframes bobbing {
