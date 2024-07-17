@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <!-- Slick CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 
 <body>
@@ -194,9 +198,18 @@
             </div>
         </section>
     </section>
+
     <section class="works-section container-fluid">
         <section class="works-section container">
             <h1 class="section-title">Works</h1>
+            <div class="container">
+                <div class="slider">
+                    <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 1"></div>
+                    <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 2"></div>
+                    <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 3"></div>
+                    <div class="image-slider"><img src="https://via.placeholder.com/300" alt="Image 4"></div>
+                </div>
+            </div>
         </section>
     </section>
 
@@ -218,8 +231,11 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
         var slider = tns({
             container: '#base',
             items: 3,
@@ -244,6 +260,19 @@
                     items: 3
                 }
             }
+        });
+
+        $(document).ready(function () {
+            $('.slider').slick({
+                accessibility: true,
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                centerMode: true,
+            });
         });
     </script>
 </body>

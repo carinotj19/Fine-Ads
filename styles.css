@@ -101,7 +101,7 @@ nav.navbar {
     animation: gradientAnimation 15s ease infinite;
 }
 
-.about-section {
+.about-section, .works-section, .videos-section, .contact-section {
     padding: 50px 0;
     background-color: white;
     color: black;
@@ -202,6 +202,13 @@ nav.navbar {
 .card-3 .flip-card-back {
     background-color: #F1E92766;
     color: #A09A0A;
+}
+
+.image-slider{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 @keyframes bobbing {
