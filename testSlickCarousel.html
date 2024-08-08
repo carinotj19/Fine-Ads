@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slick Carousel Example</title>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Slider Container */
+        .slider-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            padding: 40px 0;
+            overflow: visible;
+        }
+
+        .text-content {
+            text-align: center;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .text-content h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .text-content p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .slick-center .text-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* General Slide Styling */
+        .slick-slide img {
+            width: 300px;
+            height: auto;
+            margin: 0 -50px;
+            border-radius: 10px;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        /* Base styles for all slides */
+        .slick-slide {
+            opacity: 0.5;
+            transform: scale(0.8);
+            z-index: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* Slides directly adjacent to the center slide */
+        .slick-adjacent {
+            opacity: 0.8;
+            transform: scale(0.9);
+            z-index: 1;
+        }
+
+        /* Active (center) slide */
+        .slick-center {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
+        }
+
+        /* Overlay Text on Active Slide */
+        .slick-center .overlay {
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        /* Arrows */
+        .slick-prev:before,
+        .slick-next:before {
+            color: #000;
+            font-size: 24px;
+        }
+
+        .slick-prev {
+            left: -50px;
+        }
+
+        .slick-next {
+            right: -50px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slick-slide img {
+                width: 200px;
+            }
+
+            .slick-prev,
+            .slick-next {
+                font-size: 18px;
+            }
+
+            .overlay {
+                font-size: 18px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+1" alt="Slide 1">
+                <div class="text-content">
+                    <h2>Slide 1 Title</h2>
+                    <p>This is a description for slide 1.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+2" alt="Slide 2">
+                <div class="text-content">
+                    <h2>Slide 2 Title</h2>
+                    <p>This is a description for slide 2.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+3" alt="Slide 3">
+                <div class="text-content">
+                    <h2>Slide 3 Title</h2>
+                    <p>This is a description for slide 3.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+4" alt="Slide 4">
+                <div class="text-content">
+                    <h2>Slide 4 Title</h2>
+                    <p>This is a description for slide 4.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+5" alt="Slide 5">
+                <div class="text-content">
+                    <h2>Slide 5 Title</h2>
+                    <p>This is a description for slide 5.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+6" alt="Slide 6">
+                <div class="text-content">
+                    <h2>Slide 6 Title</h2>
+                    <p>This is a description for slide 6.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+7" alt="Slide 7">
+                <div class="text-content">
+                    <h2>Slide 7 Title</h2>
+                    <p>This is a description for slide 7.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+8" alt="Slide 8">
+                <div class="text-content">
+                    <h2>Slide 8 Title</h2>
+                    <p>This is a description for slide 8.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+9" alt="Slide 9">
+                <div class="text-content">
+                    <h2>Slide 9 Title</h2>
+                    <p>This is a description for slide 9.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/800x500?text=Slide+10" alt="Slide 10">
+                <div class="text-content">
+                    <h2>Slide 10 Title</h2>
+                    <p>This is a description for slide 10.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 5,
+                centerMode: true,
+                focusOnSelect: true,
+                initialSlide: 2, // Start with the first slide in the center
+                prevArrow: '<button type="button" class="slick-prev">&#10094;</button>',
+                nextArrow: '<button type="button" class="slick-next">&#10095;</button>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            }).on('afterChange', function (event, slick, currentSlide) {
+                // Reset all slides first
+                slick.$slides.removeClass('slick-adjacent slick-center');
+                slick.$slides.css({ opacity: 0, transform: '' });
+
+                var slides = slick.$slides;
+                var numSlides = slides.length;
+                var centerIndex = currentSlide;
+                var adjacentIndices = [centerIndex - 1, centerIndex + 1];
+                var visibleSlides = [centerIndex];
+
+                // Make sure indices are within bounds
+                for (var i = 0; i < adjacentIndices.length; i++) {
+                    var index = adjacentIndices[i];
+                    if (index >= 0 && index < numSlides) {
+                        visibleSlides.push(index);
+                    }
+                }
+
+                // Add styles to slides
+                $.each(visibleSlides, function (i, index) {
+                    var slide = $(slides[index]);
+                    slide.addClass('slick-center');
+                    slide.css({ opacity: 1, transform: 'scale(1)' });
+                });
+
+                // Handle the previous slide with wrap-around logic
+                var prevIndex = centerIndex - 1;
+                if (prevIndex < 0) {
+                    prevIndex = numSlides - 1;
+                }
+
+                // Handle the next slide with wrap-around logic
+                var nextIndex = centerIndex + 1;
+                if (nextIndex >= numSlides) {
+                    nextIndex = 0;
+                }
+
+                // Add styles to adjacent slides
+                $(slides[prevIndex]).addClass('slick-adjacent').css({ opacity: 0.8, transform: 'scale(0.9)' });
+                $(slides[nextIndex]).addClass('slick-adjacent').css({ opacity: 0.8, transform: 'scale(0.9)' });
+            });
+
+            // Trigger initial afterChange event
+            $('.slider').slick('slickGoTo', 0);
+        });
+    </script>
+</body>
+
+</html>

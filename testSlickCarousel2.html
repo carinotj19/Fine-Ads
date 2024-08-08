@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl Carousel Example</title>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .slider-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .owl-carousel .item {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease, z-index 0.3s ease;
+            z-index: 0;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 0 15px;
+        }
+
+        .owl-carousel .item img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .owl-carousel .center .item {
+            transform: scale(1.3);
+            /* Increase the scaling effect */
+            z-index: 2;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            margin-top: -20px;
+            /* Pull the center item upwards */
+        }
+
+        .owl-carousel .item h2 {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .owl-carousel .item p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .owl-carousel .item button {
+            background-color: #ff5a5f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .owl-carousel .item button:hover {
+            background-color: #ff3a3f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <div class="owl-carousel">
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 1">
+                <h2>LED Signs</h2>
+                <p>An LED display is made up of an array of pixels...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 2">
+                <h2>Neon Signs</h2>
+                <p>Neon signs use electrified, luminous tube lights...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 3">
+                <h2>Digital Billboards</h2>
+                <p>Digital billboards use digital display...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 4">
+                <h2>Digital Billboards</h2>
+                <p>Digital billboards use digital display...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 5">
+                <h2>Digital Billboards</h2>
+                <p>Digital billboards use digital display...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 6">
+                <h2>Digital Billboards</h2>
+                <p>Digital billboards use digital display...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 7">
+                <h2>Digital Billboards</h2>
+                <p>Digital billboards use digital display...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 8">
+                <h2>Digital Billboards</h2>
+                <p>Digital billboards use digital display...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 9">
+                <h2>Digital Billboards</h2>
+                <p>Digital billboards use digital display...</p>
+                <button>See more</button>
+            </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/400x300" alt="Slide 10">
+                <h2>Digital Billboards</h2>
+                <p>Digital billboards use digital display...</p>
+                <button>See more</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                center: true,
+                items: 5,
+                stagePadding: 200, /* Increase padding for better depth effect */
+                responsive: {
+                    0: {
+                        items: 1,
+                        stagePadding: 0,
+                    },
+                    600: {
+                        items: 3,
+                        stagePadding: 50,
+                    },
+                    1000: {
+                        items: 5,
+                        stagePadding: 200, /* Adjusted to match larger screens */
+                    }
+                },
+                onTranslated: function (event) {
+                    var items = $(this).find('.owl-item');
+                    items.removeClass('center');
+                    var centerIndex = Math.round((items.length / 2)) - 1;
+                    $(items[centerIndex]).addClass('center');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

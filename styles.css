@@ -24,7 +24,7 @@ nav.navbar {
 
 .hero-text h1 {
     font-weight: 900;
-    font-size: 6rem;
+    font-size: 4rem;
 }
 
 .hero-text {
@@ -60,32 +60,6 @@ nav.navbar {
 
 .card-img-top {
     border-radius: 20px !important;
-}
-
-.slider-section {
-    padding-top: 50px;
-    background-color: white;
-    color: black;
-}
-
-.tns-nav {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-}
-
-.tns-nav button {
-    width: 10px;
-    height: 10px;
-    border: 0;
-    background-color: white;
-    border-radius: 25px;
-    margin: 5px;
-}
-
-.tns-nav-active {
-    background-color: #FE6A47 !important;
 }
 
 .section-title {
@@ -125,13 +99,29 @@ nav.navbar {
 .flip-card {
     background-color: transparent;
     width: 100%;
-    height: 300px;
+    height: 400px;
     perspective: 1000px;
     border-radius: 25px;
+    margin-top: 20px;
+}
+
+.flip-card img {
+    width: 30px;
+}
+
+.flip-card .image-container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+}
+
+.flip-card:hover .image-container {
+    display: none
 }
 
 .flip-card-inner {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -162,6 +152,25 @@ nav.navbar {
     border: 1.5px #ABA505 solid;
 }
 
+.flip-card-inner.card-1 .image-container{
+    background-color: #B3C3F3;
+    padding: 15px 15px;
+    border-radius: 50%;
+}
+
+.flip-card-inner.card-2 .image-container{
+    background-color: #FFB5A3;
+    padding: 15px 15px;
+    border-radius: 50%; 
+}
+
+.flip-card-inner.card-3 .image-container{
+    background-color: #F9F6A9;
+    color: #000;
+    padding: 15px 15px;
+    border-radius: 50%;
+}
+
 .flip-card:hover .flip-card-inner {
     transform: rotateX(180deg);
 }
@@ -180,8 +189,10 @@ nav.navbar {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     font-size: 50px;
-    border-radius: 25px;
+    margin: 50px 0;
+    height: 300px;
 }
 
 .flip-card-back {
@@ -191,6 +202,22 @@ nav.navbar {
     justify-content: center;
     padding: 20px;
     border-radius: 25px;
+    flex-direction: column;
+}
+
+.card-1 .flip-card-front {
+    background-color: #4169E166;
+    color: #0029A5;
+}
+
+.card-2 .flip-card-front {
+    background-color: #FE451866;
+    color: #C52600;
+}
+
+.card-3 .flip-card-front {
+    background-color: #F1E92766;
+    color: #A09A0A;
 }
 
 .card-1 .flip-card-back {
@@ -206,17 +233,6 @@ nav.navbar {
 .card-3 .flip-card-back {
     background-color: #F1E92766;
     color: #A09A0A;
-}
-
-.slider-works .slick-slide img {
-    width: 80% !important;
-}
-
-.image-slider {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 .contact-card {
@@ -274,6 +290,138 @@ nav.navbar {
     margin-right: 10px;
 }
 
+/* Slider Container */
+.slider-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+    overflow: visible;
+}
+
+.whatwedo-section .text-content {
+    display: flex;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.whatwedo-section .text-content h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.whatwedo-section .text-content p {
+    width: 300px;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.whatwedo-section .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.whatwedo-section .slick-center .text-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.whatwedo-section .slick-initialized .slick-slide {
+    display: inline-flexbox !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+/* General Slide Styling */
+.whatwedo-section .slick-slide img {
+    width: 300px;
+    height: auto;
+    margin: 0 -50px;
+    border-radius: 10px;
+    transition: opacity 0.6s ease, transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* General Slide Styling */
+.normal-slider .slick-slide img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Base styles for all slides */
+.whatwedo-section .slick-slide {
+    transform: scale(0.8);
+    filter: blur(4px);
+    z-index: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0.3;
+}
+
+/* Slides directly adjacent to the center slide */
+.whatwedo-section .slick-adjacent {
+    transform: scale(0.9);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* Active (center) slide */
+.whatwedo-section .slick-center {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+    z-index: 2;
+}
+
+/* Overlay Text on Active Slide */
+.whatwedo-section .slick-center .overlay {
+    display: block;
+}
+
+.whatwedo-section .overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+}
+
+/* Arrows */
+.slick-prev:before,
+.slick-next:before {
+    color: #000 !important;
+    font-size: 24px;
+}
+
+.slick-prev {
+    left: -50px;
+}
+
+.slick-next {
+    right: -50px;
+}
+
 @keyframes bobbing {
     0% {
         transform: translateY(0);
@@ -299,5 +447,30 @@ nav.navbar {
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .slick-slide img {
+        width: 200px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        font-size: 18px;
+    }
+
+    .whatwedo-section .overlay {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        display: flex;
+    }
+    .col-md-4.contact-card {
+        border: 0px !important;
     }
 }
