@@ -2,7 +2,6 @@
 
 html,
 body {
-    height: 100%;
     margin: 0;
     scroll-behavior: smooth;
     font-family: "Source Sans 3", sans-serif !important;
@@ -22,10 +21,42 @@ nav.navbar {
     margin: 2% auto;
     position: sticky;
     top: 0;
-    z-index: 1000; 
-    background-color: #f8f9fa; 
+    z-index: 1000 !important;
+    background-color: #f8f9fa;
+    transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 0 !important;
+    font-weight: 900;
 }
 
+nav.navbar li.nav-item {
+    padding: 0px 5px;
+}
+
+nav.navbar .navbar-nav .nav-link:hover,
+nav.navbar.scrolled .navbar-nav .nav-link:hover {
+    color: #FE6A47 !important;
+}
+
+nav.navbar .navbar-nav .nav-link {
+    transition: all 0.4s ease;
+}
+
+.btn,
+.cta-button {
+    background: #FE6A47 !important;
+    color: white !important;
+}
+
+nav.navbar.scrolled {
+    width: 100%;
+    border-radius: 0 0 25px 25px;
+    background-color: #B3C3F3 !important;
+    padding: 15px;
+}
+
+nav.navbar.scrolled .navbar-nav .nav-link {
+    color: #ffffff;
+}
 
 .hero-text h1 {
     font-weight: 900;
@@ -48,7 +79,7 @@ nav.navbar {
     transform: translateX(-50%);
     font-size: 2rem;
     color: #fff;
-    background-color: rgba(92, 106, 196, 0.8);
+    background-color: #B3C3F3;
     padding: 10px 20px;
     border-radius: 50px 50px 0 0;
     cursor: pointer;
@@ -88,6 +119,7 @@ nav.navbar {
     padding: 50px 0;
     background-color: white;
     color: black;
+    z-index: 1 !important;
 }
 
 .about-section {
@@ -114,7 +146,7 @@ nav.navbar {
     width: 30px;
 }
 
-.flip-card .image-container{
+.flip-card .image-container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -157,19 +189,19 @@ nav.navbar {
     border: 1.5px #ABA505 solid;
 }
 
-.flip-card-inner.card-1 .image-container{
+.flip-card-inner.card-1 .image-container {
     background-color: #B3C3F3;
     padding: 15px 15px;
     border-radius: 50%;
 }
 
-.flip-card-inner.card-2 .image-container{
+.flip-card-inner.card-2 .image-container {
     background-color: #FFB5A3;
     padding: 15px 15px;
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
-.flip-card-inner.card-3 .image-container{
+.flip-card-inner.card-3 .image-container {
     background-color: #F9F6A9;
     color: #000;
     padding: 15px 15px;
@@ -429,6 +461,18 @@ nav.navbar {
     right: -50px;
 }
 
+#contact-section a, #contact-section p{
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+#contact-section a:hover{
+    color: #FE6A47;
+    text-decoration: none;
+}
+
 @keyframes bobbing {
     0% {
         transform: translateY(0);
@@ -458,6 +502,45 @@ nav.navbar {
 }
 
 @media (max-width: 768px) {
+    .arrow {
+        display: none;
+    }
+
+    .hero-text {
+        padding: 15px 5px 5px 5px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-weight: 900;
+        font-size: 4rem;
+    }
+
+    .hero-section {
+        height: 95vh;
+    }
+
+    .section-title {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .whatwedo-section .slick-slide img {
+        width: 140px;
+    }
+
+    .cta-button {
+        width: 300px;
+    }
+
+    .about-section, .works-section, .videos-section, .contact-section, .whatwedo-section {
+        padding: 10px 0;
+    }
+
+    .contact-card{
+border: 0;
+    }
+
     .slick-slide img {
         width: 200px;
     }
@@ -477,6 +560,7 @@ nav.navbar {
     .hero-section {
         display: flex;
     }
+
     .col-md-4.contact-card {
         border: 0px !important;
     }
