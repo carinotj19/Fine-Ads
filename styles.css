@@ -259,6 +259,8 @@ nav.navbar {
 .address .icon-bg {
     background-color: #4866D6;
     color: white;
+    width: 90px;
+    height: 91px;
 }
 
 .phone .icon-bg {
