@@ -313,7 +313,7 @@ nav.navbar.scrolled .navbar-nav .nav-link {
 }
 
 .footer {
-    background-color: #4866D6;
+    background: linear-gradient(135deg, #6A11CB, #2575FC, #a38333, #FF8008);
     color: white;
     padding: 65px 0;
 }
